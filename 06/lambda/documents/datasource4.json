@@ -1,0 +1,25 @@
+{
+    "templateData": {
+        "type": "object",
+        "properties": {
+            "header": "Hola Multimodal",
+            "background": "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
+            "footer": "¿sabes rapear?",
+            "text": "¡Te sorprenderás!",
+            "textSsml": "<speak><say-as interpret-as=\"interjection\">hola</say-as>. ¡Te sorprenderás!</speak>",
+            "image": "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png",
+            "logo": "https://s3-eu-west-1.amazonaws.com/miscalexa/skilllogo.png"
+        },
+        "transformers": [
+            {
+                "inputPath": "footer",
+                "transformer": "textToHint"
+            },
+            {
+                "inputPath": "textSsml",
+                "outputName": "textSpeech",
+                "transformer": "ssmlToSpeech"
+            }
+        ]
+    }
+}

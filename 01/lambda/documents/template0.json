@@ -1,0 +1,23 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "items": [
+                    {
+                        "type": "Image",
+                        "source": "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
+                        "scale": "best-fill",
+                        "width": "100vw",
+                        "height": "100vh"
+                    }
+                ]
+            }
+        ]
+    }
+}

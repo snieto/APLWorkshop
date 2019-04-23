@@ -1,0 +1,7 @@
+{
+    "templateData": {
+        "background": "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
+        "text": "<i>\"Alexa, ¿sabes rapear?\"</i>",
+        "image": "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png"
+    }
+}

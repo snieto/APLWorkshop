@@ -1,0 +1,45 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "items": [
+                    {
+                        "type": "Image",
+                        "source": "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
+                        "scale": "best-fill",
+                        "width": "100vw",
+                        "height": "100vh"
+                    },
+                    {
+                        "type": "Container",
+                        "position": "absolute",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "item": [
+                            {
+                                "type": "Image",
+                                "source": "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png",
+                                "width": "20vw",
+                                "height": "20vw"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "<i>\"Alexa, ¿sabes rapear?\"</i>",
+                                "color" : "#FFFFFF",
+                                "paddingTop" : "10vw"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

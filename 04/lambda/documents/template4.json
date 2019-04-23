@@ -1,0 +1,119 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "import": [
+        {
+            "name": "alexa-styles",
+            "version" : "1.0.0"
+        },
+        {
+            "name": "alexa-layouts",
+            "version" : "1.0.0"
+        }
+    ],
+    "resources": [
+        {
+            "dimensions": {
+              "myTextTopPadding": "50dp"
+            }
+          }
+    ],
+    "styles": {
+        "myTextStyle": {
+            "values": [
+                {
+                    "fontSize": "25",
+                    "fontWeight": "bold",
+                    "letterSpacing": "20",
+                    "textAlign": "center"
+                }
+            ]
+        }
+    },
+    "layouts": {
+        "CentralLayout": {
+            "description": "A basic central screen layout with an image and a text",
+            "parameters": [
+                {
+                    "name": "image",
+                    "type": "string"
+                },
+                {
+                    "name": "text",
+                    "type": "string"
+                }
+            ],
+            "items": [
+                {
+                    "type": "Container",
+                    "position": "absolute",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                    "item": [
+                        {
+                            "type": "Image",
+                            "source": "${image}",
+                            "width": "20vw",
+                            "height": "20vw"
+                        },
+                        {
+                            "type": "Text",
+                            "text": "${text}",
+                            "color" : "#FFFFFF",
+                            "style" : "textStyleDisplay5",
+                            "paddingTop" : "@myTextTopPadding"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "items": [
+                    {
+                        "type": "Image",
+                        "source": "${payload.templateData.background}",
+                        "scale": "best-fill",
+                        "width": "100vw",
+                        "height": "100vh"
+                    },
+
+                    {
+                       "type": "Container",
+                        "position": "absolute",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "items": [
+                            {
+                                "type": "Container",
+                                "width": "100vw",
+                                "height": "85vh",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "items": [
+                                    {
+                                        "type": "CentralLayout",
+                                        "image": "${payload.templateData.image}",
+                                        "text": "${payload.templateData.text}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "AlexaFooter",
+                                "hintText": "${payload.templateData.footer}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
