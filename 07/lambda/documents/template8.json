@@ -52,6 +52,10 @@
                 {
                     "name": "text",
                     "type": "string"
+                },
+                {
+                    "name": "textSpeech",
+                    "type": "string"
                 }
             ],
             "items": [
@@ -71,7 +75,10 @@
                         },
                         {
                             "type": "Text",
+                            "id": "idVoiceDemoText",
                             "text": "${text}",
+                            "speech": "${textSpeech}",
+                            "textAlign": "center",
                             "color" : "#FFFFFF",
                             "style" : "textStyleDisplay5",
                             "paddingTop" : "@myTextTopPadding"
@@ -91,7 +98,7 @@
                 "items": [
                     {
                         "type": "Image",
-                        "source": "${payload.templateData.background}",
+                        "source": "${payload.templateData.properties.background}",
                         "scale": "best-fill",
                         "width": "100vw",
                         "height": "100vh"
@@ -112,8 +119,8 @@
                                 "items": [
                                     {
                                         "type": "CentralLayout",
-                                        "image": "${payload.templateData.image}",
-                                        "text": "${payload.templateData.text}"
+                                        "image": "${payload.templateData.properties.image}",
+                                        "text": "${payload.templateData.properties.text}"
                                     }
                                 ]
                             },
@@ -127,14 +134,15 @@
                                 "items": [
                                     {
                                         "type": "CentralLayout",
-                                        "image": "${payload.templateData.image}",
-                                        "text": "${payload.templateData.text}"
+                                        "image": "${payload.templateData.properties.image}",
+                                        "text": "${payload.templateData.properties.text}",
+                                        "textSpeech": "${payload.templateData.properties.textSpeech}"
                                     }
                                 ]
                             },
                             {
                                 "type": "AlexaFooter",
-                                "hintText": "${payload.templateData.footer}"
+                                "hintText": "${payload.templateData.properties.footer}"
                             }
                         ]
                     }

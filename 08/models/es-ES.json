@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "hello multimodal",
+            "invocationName": "hola multimodal",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -16,24 +16,29 @@
                     "samples": []
                 },
                 {
-                    "name": "HelloWorldIntent",
+                    "name": "RapIntent",
                     "slots": [],
                     "samples": [
-                        "hello",
-                        "how are you",
-                        "say hi world",
-                        "say hi",
-                        "hi",
-                        "say hello world",
-                        "say hello"
+                        "rapea",
+                        "sabes rapear",
+                        "puedes rapear",
+                        "quiero un rap",
+                        "rap",
+                        "a rapear",
+                        "hazme un rap",
+                        "dame un rap",
+                        "canta un rap",
+                        "canta",
+                        "canta algo",
+                        "ponle más sentimiento",
+                        "hazlo menos robótico",
+                        "con estilo de rap",
+                        "ponle estilo de rap",
+                        "como un rapero"
                     ]
                 },
                 {
                     "name": "AMAZON.NavigateHomeIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.FallbackIntent",
                     "samples": []
                 }
             ],

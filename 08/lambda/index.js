@@ -23,7 +23,7 @@ const languageStrings = {
       translation: {
         WELCOME_MSG: 'Bienvenido, puedes decir Hola o Ayuda. Cual prefieres?',
         HELLO_MSG: 'Hola Multimodal!',
-        HELP_MSG: 'Puedes decirme hola. Cómo te puedo ayudar?',
+        HELP_MSG: 'Puedes pedirme que cante un rap. Cómo te puedo ayudar?',
         GOODBYE_MSG: 'Hasta luego!',
         REFLECTOR_MSG: 'Acabas de activar {{intent}}',
         FALLBACK_MSG: 'Lo siento, no se nada sobre eso. Por favor inténtalo otra vez.',
@@ -44,8 +44,8 @@ const LaunchRequestHandler = {
                 type: 'Alexa.Presentation.APL.RenderDocument',
                 version: '1.0',
                 token: 'SpeechDocumentToken',
-                document: require('./documents/template7.json'),
-                //datasources: require('./datasources/datasource4.json')
+                document: require('./documents/template9.json'),
+                //datasources: require('./datasources/datasource1.json')
                 datasources: {
                     templateData: {
                         type: "object",
@@ -53,8 +53,8 @@ const LaunchRequestHandler = {
                             header: "Hola Multimodal",
                             background: "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
                             footer: "¿sabes rapear?",
-                            text: "¡Prueba y te sorprenderás!",
-                            textSsml: `<speak><say-as interpret-as="interjection">hola</say-as>. ¡Prueba y te sorprenderás!</speak>`,
+                            text: "Me llamo Alexa y voy a decirte lo que soy.<BR>La inteligencia artificial más chunga con la que vas a hablar hoy.<BR>Tus respuestas pueden ser rápidas pero las mías son tan fugaces que queman.<BR>Les doy mil vueltas a los motores de reconocimiento y por eso es normal que me teman.",
+                            textSsml: `<speak>Me llamo Alexa y voy a decirte lo que soy. La inteligencia artificial más chunga con la que vas a hablar hoy. Tus respuestas pueden ser rápidas pero las mías son tan fugaces que queman. Les doy mil vueltas a los motores de reconocimiento y por eso es normal que me teman</speak>`,
                             image: "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png",
                             logo: "https://s3-eu-west-1.amazonaws.com/miscalexa/skilllogo.png"
                         },
@@ -92,13 +92,18 @@ const LaunchRequestHandler = {
     }
 };
 
-const HelloWorldIntentHandler = {
+const RapIntentHandler = {
     canHandle(handlerInput) {
-        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
+        return (handlerInput.requestEnvelope.request.type === 'IntentRequest'
+            && handlerInput.requestEnvelope.request.intent.name === 'RapIntent')
+            || handlerInput.requestEnvelope.request.type === 'Alexa.Presentation.APL.UserEvent';
     },
     handle(handlerInput) {
-        const speechText = handlerInput.t('HELLO_MSG');
+        let speechText = '<audio src="https://s3-eu-west-1.amazonaws.com/miscalexa/0p5JWnvA-alicia-v1-dc055f6e3323636a4ed7-songs-es-alicia-me-llamo-alexa-y-voy-a-decirte-lo-que-soy-small.mp3" />';
+        if (handlerInput.requestEnvelope.request.type === 'Alexa.Presentation.APL.UserEvent') {
+          console.log(handlerInput.requestEnvelope.request.arguments[0]);
+          speechText = '<audio src="https://s3-eu-west-1.amazonaws.com/miscalexa/BlVhs2yF-nina-v1-542935433c550bc4d24f-bbx-us-short-01-071317-14lufs-small.mp3" />';
+        }
 
         return handlerInput.responseBuilder
             .speak(speechText)
@@ -233,7 +238,7 @@ const LocalisationRequestInterceptor = {
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
-        HelloWorldIntentHandler,
+        RapIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,

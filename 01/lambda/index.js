@@ -95,6 +95,7 @@ const CancelAndStopIntentHandler = {
         const speechText = handlerInput.t('GOODBYE_MSG');
 
         return handlerInput.responseBuilder
+            .withShouldEndSession(true)
             .speak(speechText)
             .getResponse();
     }

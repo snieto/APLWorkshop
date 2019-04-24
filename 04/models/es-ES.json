@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "hola mundo",
+            "invocationName": "hola multimodal",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",

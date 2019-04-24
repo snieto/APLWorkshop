@@ -9,6 +9,10 @@
         {
             "name": "alexa-layouts",
             "version" : "1.0.0"
+        },
+        {
+            "name": "alexa-viewport-profiles",
+            "version" : "1.0.0"
         }
     ],
     "resources": [

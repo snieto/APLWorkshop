@@ -5,8 +5,8 @@
             "header": "Hola Multimodal",
             "background": "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
             "footer": "¿sabes rapear?",
-            "text": "¡Prueba y te sorprenderás!",
-            "textSsml": "<speak><say-as interpret-as=\"interjection\">hola</say-as>. ¡Prueba y te sorprenderás!</speak>",
+            "text": "Me llamo Alexa y voy a decirte lo que soy.<BR>La inteligencia artificial más chunga con la que vas a hablar hoy.<BR>Tus respuestas pueden ser rápidas pero las mías son tan fugaces que queman.<BR>Les doy mil vueltas a los motores de reconocimiento y por eso es normal que me teman.",
+            "textSsml": "<speak>Me llamo Alexa y voy a decirte lo que soy. La inteligencia artificial más chunga con la que vas a hablar hoy. Tus respuestas pueden ser rápidas pero las mías son tan fugaces que queman. Les doy mil vueltas a los motores de reconocimiento y por eso es normal que me teman</speak>",
             "image": "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png",
             "logo": "https://s3-eu-west-1.amazonaws.com/miscalexa/skilllogo.png"
         },

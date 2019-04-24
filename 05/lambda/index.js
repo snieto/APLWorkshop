@@ -52,7 +52,7 @@ const LaunchRequestHandler = {
                             header: "Hola Multimodal",
                             background: "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
                             footer: "¿sabes rapear?",
-                            text: "¡Te sorprenderás!",
+                            text: "¡Prueba y te sorprenderás!",
                             image: "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png",
                             logo: "https://s3-eu-west-1.amazonaws.com/miscalexa/skilllogo.png"
                         },
@@ -114,6 +114,7 @@ const CancelAndStopIntentHandler = {
         const speechText = handlerInput.t('GOODBYE_MSG');
 
         return handlerInput.responseBuilder
+            .withShouldEndSession(true)
             .speak(speechText)
             .getResponse();
     }
