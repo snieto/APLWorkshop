@@ -1,2 +1,2 @@
 # APLWorkshop
-Building blocks APL workshop
+Pregressive demo for intro APL workshop
