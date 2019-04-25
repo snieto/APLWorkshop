@@ -44,7 +44,7 @@ const LaunchRequestHandler = {
                 type: 'Alexa.Presentation.APL.RenderDocument',
                 version: '1.0',
                 token: 'SpeechDocumentToken',
-                document: require('./documents/template7.json'),
+                document: require('./documents/template8.json'),
                 //datasources: require('./datasources/datasource4.json')
                 datasources: {
                     templateData: {

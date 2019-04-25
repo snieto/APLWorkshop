@@ -47,6 +47,7 @@ const LaunchRequestHandler = {
                 //datasources: require('./documents/datasource2.json')
                 datasources: {
                     templateData: {
+                        background: "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
                         text: "Texto del Rap va aquí",
                         footer: "<i>\"Alexa, ¿sabes rapear?\"</i>",
                         image: "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png"

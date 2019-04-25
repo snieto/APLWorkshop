@@ -60,40 +60,29 @@
             ],
             "items": [
                 {
-                    "type": "TouchWrapper",
-                    "id": "touch-one",
-                    "item": {
-                        "type": "Container",
-                        "position": "absolute",
-                        "width": "100vw",
-                        "height": "100vh",
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "item": [
-                            {
-                                "type": "Image",
-                                "source": "${image}",
-                                "width": "20vw",
-                                "height": "20vw"
-                            },
-                            {
-                                "type": "Text",
-                                "id": "idVoiceDemoText",
-                                "text": "${text}",
-                                "speech": "${textSpeech}",
-                                "textAlign": "center",
-                                "color" : "#FFFFFF",
-                                "style" : "textStyleDisplay5",
-                                "paddingTop" : "@myTextTopPadding"
-                            }
-                        ]
-                    },
-                    "onPress": {
-                        "type": "SendEvent",
-                        "arguments": [
-                            "${text}"
-                        ]
-                    }
+                    "type": "Container",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                    "item": [
+                        {
+                            "type": "Image",
+                            "source": "${image}",
+                            "width": "20vw",
+                            "height": "20vw"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "idVoiceDemoText",
+                            "text": "${text}",
+                            "speech": "${textSpeech}",
+                            "textAlign": "center",
+                            "color" : "#FFFFFF",
+                            "style" : "textStyleDisplay5",
+                            "paddingTop" : "@myTextTopPadding"
+                        }
+                    ]
                 }
             ]
         }
