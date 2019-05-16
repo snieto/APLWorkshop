@@ -21,6 +21,7 @@
             "dimensions": {
               "myTextTopPadding": "40dp"
             }
+
         },
         {
             "when": "${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
@@ -33,9 +34,9 @@
         "myTextStyle": {
             "values": [
                 {
-                    "fontSize": "25",
+                    "fontSize": "22",
                     "fontWeight": "bold",
-                    "letterSpacing": "20",
+                    "letterSpacing": "0",
                     "textAlign": "center"
                 }
             ]
@@ -55,6 +56,10 @@
                 },
                 {
                     "name": "textSpeech",
+                    "type": "string"
+                },
+                {
+                    "name": "style",
                     "type": "string"
                 }
             ],
@@ -82,7 +87,7 @@
                                 "speech": "${textSpeech}",
                                 "textAlign": "center",
                                 "color" : "#FFFFFF",
-                                "style" : "textStyleDisplay5",
+                                "style" : "${style}",
                                 "paddingTop" : "@myTextTopPadding"
                             }
                         ]
@@ -129,7 +134,9 @@
                                     {
                                         "type": "CentralLayout",
                                         "image": "${payload.templateData.properties.image}",
-                                        "text": "${payload.templateData.properties.text}"
+                                        "text": "${payload.templateData.properties.text}",
+                                        "textSpeech": "${payload.templateData.properties.textSpeech}",
+                                        "style": "myTextStyle"
                                     }
                                 ]
                             },
@@ -145,7 +152,8 @@
                                         "type": "CentralLayout",
                                         "image": "${payload.templateData.properties.image}",
                                         "text": "${payload.templateData.properties.text}",
-                                        "textSpeech": "${payload.templateData.properties.textSpeech}"
+                                        "textSpeech": "${payload.templateData.properties.textSpeech}",
+                                        "style": "textStyleDisplay5"
                                     }
                                 ]
                             },

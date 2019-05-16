@@ -33,9 +33,9 @@
         "myTextStyle": {
             "values": [
                 {
-                    "fontSize": "25",
+                    "fontSize": "22",
                     "fontWeight": "bold",
-                    "letterSpacing": "20",
+                    "letterSpacing": "0",
                     "textAlign": "center"
                 }
             ]
