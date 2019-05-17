@@ -76,6 +76,7 @@
                         "item": [
                             {
                                 "type": "Image",
+                                "id": "image",
                                 "source": "${image}",
                                 "width": "20vw",
                                 "height": "20vw"
@@ -92,12 +93,26 @@
                             }
                         ]
                     },
-                    "onPress": {
-                        "type": "SendEvent",
-                        "arguments": [
-                            "${text}"
-                        ]
-                    }
+                    "onPress": [ 
+                        {
+                            "type": "SendEvent",
+                            "arguments": [
+                                "${text}"
+                            ]
+                        },
+                        {
+                            "type": "SetState",
+                            "componentId": "touch-one",
+                            "state": "disabled",
+                            "value": true
+                        },
+                        {
+                            "type": "SetValue",
+                            "componentId": "image",
+                            "property": "opacity",
+                            "value": "0.3"
+                        }
+                    ]
                 }
             ]
         }
