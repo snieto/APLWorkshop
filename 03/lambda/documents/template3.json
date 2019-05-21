@@ -12,7 +12,7 @@
             "dimensions": {
               "myTextTopPadding": "50dp"
             }
-          }
+        }
     ],
     "styles": {
         "myTextStyle": {
@@ -53,12 +53,13 @@
                                 "type": "Image",
                                 "source": "${payload.templateData.image}",
                                 "width": "20vw",
-                                "height": "20vw"
+                                "height": "20vh"
                             },
                             {
                                 "type": "Text",
                                 "text": "${payload.templateData.text}",
                                 "color" : "#FFFFFF",
+                                "textAlign": "center",
                                 "style" : "textStyleDisplay5",
                                 "paddingTop" : "@myTextTopPadding"
                             }

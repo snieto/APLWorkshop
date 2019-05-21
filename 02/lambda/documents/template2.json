@@ -28,12 +28,13 @@
                                 "type": "Image",
                                 "source": "${payload.templateData.image}",
                                 "width": "20vw",
-                                "height": "20vw"
+                                "height": "20vh"
                             },
                             {
                                 "type": "Text",
                                 "text": "${payload.templateData.text}",
                                 "color" : "#FFFFFF",
+                                "textAlign": "center",
                                 "paddingTop" : "10vw"
                             }
                         ]

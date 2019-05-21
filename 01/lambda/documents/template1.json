@@ -28,12 +28,13 @@
                                 "type": "Image",
                                 "source": "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png",
                                 "width": "20vw",
-                                "height": "20vw"
+                                "height": "20vh"
                             },
                             {
                                 "type": "Text",
                                 "text": "<i>\"Alexa, ¿sabes rapear?\"</i>",
                                 "color" : "#FFFFFF",
+                                "textAlign": "center",
                                 "paddingTop" : "10vw"
                             }
                         ]

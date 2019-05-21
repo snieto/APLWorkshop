@@ -21,7 +21,6 @@
             "dimensions": {
               "myTextTopPadding": "40dp"
             }
-
         },
         {
             "when": "${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
@@ -79,15 +78,15 @@
                                 "id": "image",
                                 "source": "${image}",
                                 "width": "20vw",
-                                "height": "20vw"
+                                "height": "20vh"
                             },
                             {
                                 "type": "Text",
                                 "id": "idVoiceDemoText",
                                 "text": "${text}",
                                 "speech": "${textSpeech}",
-                                "textAlign": "center",
                                 "color" : "#FFFFFF",
+                                "textAlign": "center",
                                 "style" : "${style}",
                                 "paddingTop" : "@myTextTopPadding"
                             }

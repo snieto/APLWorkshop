@@ -74,15 +74,15 @@
                             "type": "Image",
                             "source": "${image}",
                             "width": "20vw",
-                            "height": "20vw"
+                            "height": "20vh"
                         },
                         {
                             "type": "Text",
                             "id": "idVoiceDemoText",
                             "text": "${text}",
                             "speech": "${textSpeech}",
-                            "textAlign": "center",
                             "color" : "#FFFFFF",
+                            "textAlign": "center",
                             "style" : "${style}",
                             "paddingTop" : "@myTextTopPadding"
                         }
@@ -107,7 +107,7 @@
                         "height": "100vh"
                     },
                     {
-                       "type": "Container",
+                        "type": "Container",
                         "position": "absolute",
                         "width": "100vw",
                         "height": "100vh",
