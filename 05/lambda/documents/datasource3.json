@@ -2,12 +2,10 @@
     "templateData": {
         "type": "object",
         "properties": {
-            "header": "Hola Multimodal",
             "background": "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
-            "footer": "¿sabes rapear?",
+            "footer": "sabes rapear?",
             "text": "¡Prueba y te sorprenderás!",
-            "image": "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png",
-            "logo": "https://s3-eu-west-1.amazonaws.com/miscalexa/skilllogo.png"
+            "image": "https://s3-eu-west-1.amazonaws.com/miscalexa/logo.png"
         },
         "transformers": [
             {

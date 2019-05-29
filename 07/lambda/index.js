@@ -16,7 +16,11 @@ const languageStrings = {
         GOODBYE_MSG: 'Goodbye!',
         REFLECTOR_MSG: 'You just triggered {{intent}}',
         FALLBACK_MSG: 'Sorry, I don\'t know about that. Please try again.',
-        ERROR_MSG: 'Sorry, there was an error. Please try again.'
+        ERROR_MSG: 'Sorry, there was an error. Please try again.',
+        FOOTER_MSG: 'can you rap?',
+        SSML_MSG: `<speak>My name is Alexa and I'm here to say. I'm the baddest A.I. in the cloud today. Your responses are fast but mine are faster. Sucker speech engines they call me master</speak>`,
+        RAP_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/rap_en.mp3',
+        BB_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/bb.mp3'
       }
     },
     es:{
@@ -27,7 +31,11 @@ const languageStrings = {
         GOODBYE_MSG: 'Hasta luego!',
         REFLECTOR_MSG: 'Acabas de activar {{intent}}',
         FALLBACK_MSG: 'Lo siento, no se nada sobre eso. Por favor inténtalo otra vez.',
-        ERROR_MSG: 'Lo siento, ha habido un problema. Por favor inténtalo otra vez.'
+        ERROR_MSG: 'Lo siento, ha habido un problema. Por favor inténtalo otra vez.',
+        FOOTER_MSG: 'sabes rapear?',
+        SSML_MSG: '<speak>Me llamo Alexa y voy a decirte lo que soy. La inteligencia artificial más chunga con la que vas a hablar hoy. Tus respuestas pueden ser rápidas pero las mías son tan fugaces que queman. Les doy mil vueltas a los motores de reconocimiento y por eso es normal que me teman</speak>',
+        RAP_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/rap_es.mp3',
+        BB_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/bb.mp3'
       }
     }
   }
@@ -50,13 +58,10 @@ const LaunchRequestHandler = {
                     templateData: {
                         type: "object",
                         properties: {
-                            header: "Hola Multimodal",
-                            background: "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
-                            footer: "¿sabes rapear?",
-                            text: "Me llamo Alexa y voy a decirte lo que soy.<BR>La inteligencia artificial más chunga con la que vas a hablar hoy.<BR>Tus respuestas pueden ser rápidas pero las mías son tan fugaces que queman.<BR>Les doy mil vueltas a los motores de reconocimiento y por eso es normal que me teman.",
-                            textSsml: `<speak>Me llamo Alexa y voy a decirte lo que soy. La inteligencia artificial más chunga con la que vas a hablar hoy. Tus respuestas pueden ser rápidas pero las mías son tan fugaces que queman. Les doy mil vueltas a los motores de reconocimiento y por eso es normal que me teman</speak>`,
-                            image: "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png",
-                            logo: "https://s3-eu-west-1.amazonaws.com/miscalexa/skilllogo.png"
+                            background: util.getS3PreSignedUrl('Media/background.png'),
+                            footer: handlerInput.t('FOOTER_MSG'),
+                            textSsml: handlerInput.t('SSML_MSG'),
+                            image: util.getS3PreSignedUrl('Media/logo.png')
                         },
                         transformers: [
                             {
@@ -65,8 +70,13 @@ const LaunchRequestHandler = {
                             },
                             {
                                 inputPath: "textSsml",
-                                outputName: "textSpeech",
+                                outputName: "textSpeech", // gets generated in datasource at the same level of textSsml (properties)
                                 transformer: "ssmlToSpeech"
+                            },
+                            {
+                                inputPath: "textSsml",
+                                outputName: "text", // gets generated in datasource at the same level of textSsml (properties)
+                                transformer: "ssmlToText"
                             }
                         ]
                     }
@@ -81,7 +91,7 @@ const LaunchRequestHandler = {
                   "componentId": "idVoiceDemoText",
                   "highlightMode": "line"
                 }]
-          })
+              })
         } else {
             handlerInput.responseBuilder
             .speak(speechText)
@@ -98,8 +108,46 @@ const RapIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'RapIntent';
     },
     handle(handlerInput) {
-        const speechText = '<audio src="https://s3-eu-west-1.amazonaws.com/miscalexa/0p5JWnvA-alicia-v1-dc055f6e3323636a4ed7-songs-es-alicia-me-llamo-alexa-y-voy-a-decirte-lo-que-soy-small.mp3" />';
-        // beatbox https://s3-eu-west-1.amazonaws.com/miscalexa/BlVhs2yF-nina-v1-542935433c550bc4d24f-bbx-us-short-01-071317-14lufs-small.mp3
+        const speechText = `<audio src="${handlerInput.t('RAP_MP3')}"/>`;
+        //const speechText = `<audio src="${util.getS3PreSignedUrl('Media/rap_en.mp3')}"/>`;
+
+        if(util.supportsAPL(handlerInput)){
+            handlerInput.responseBuilder.addDirective({
+                type: 'Alexa.Presentation.APL.RenderDocument',
+                version: '1.0',
+                token: 'SpeechDocumentToken',
+                document: require('./documents/template7.json'),
+                //datasources: require('./datasources/datasource5.json')
+                datasources: {
+                    templateData: {
+                        type: "object",
+                        properties: {
+                            background: util.getS3PreSignedUrl('Media/background.png'),
+                            footer: handlerInput.t('FOOTER_MSG'),
+                            textSsml: handlerInput.t('SSML_MSG'),
+                            image: util.getS3PreSignedUrl('Media/logo.png')
+                        },
+                        transformers: [
+                            {
+                                inputPath: "footer",
+                                transformer: "textToHint"
+                            },
+                            {
+                                inputPath: "textSsml",
+                                outputName: "textSpeech", // gets generated in datasource at the same level of textSsml (properties)
+                                transformer: "ssmlToSpeech"
+                            },
+                            {
+                                inputPath: "textSsml",
+                                outputName: "text", // gets generated in datasource at the same level of textSsml (properties)
+                                transformer: "ssmlToText"
+                            }
+                        ]
+                    }
+                }
+            })
+        }
+
         return handlerInput.responseBuilder
             .speak(speechText)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')

@@ -1,0 +1,49 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hello multimodal",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RapIntent",
+                    "slots": [],
+                    "samples": [
+                        "go rap",
+                        "do you know how to rap",
+                        "can you rap",
+                        "i want a rap",
+                        "rap",
+                        "let's rap",
+                        "show me a rap",
+                        "sing a rap",
+                        "sing",
+                        "sing something",
+                        "with more feeling",
+                        "less robotic",
+                        "with a rap style",
+                        "do it rap style",
+                        "like a rapper",
+                        "more natural",
+                        "more feeling"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        }
+    }
+}

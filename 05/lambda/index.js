@@ -16,7 +16,9 @@ const languageStrings = {
         GOODBYE_MSG: 'Goodbye!',
         REFLECTOR_MSG: 'You just triggered {{intent}}',
         FALLBACK_MSG: 'Sorry, I don\'t know about that. Please try again.',
-        ERROR_MSG: 'Sorry, there was an error. Please try again.'
+        ERROR_MSG: 'Sorry, there was an error. Please try again.',
+        FOOTER_MSG: 'can you rap?',
+        TEXT_MSG: 'Just try it and be amazed!'
       }
     },
     es:{
@@ -27,10 +29,12 @@ const languageStrings = {
         GOODBYE_MSG: 'Hasta luego!',
         REFLECTOR_MSG: 'Acabas de activar {{intent}}',
         FALLBACK_MSG: 'Lo siento, no se nada sobre eso. Por favor inténtalo otra vez.',
-        ERROR_MSG: 'Lo siento, ha habido un problema. Por favor inténtalo otra vez.'
+        ERROR_MSG: 'Lo siento, ha habido un problema. Por favor inténtalo otra vez.',
+        FOOTER_MSG: 'sabes rapear?',
+        TEXT_MSG: '¡Prueba y te sorprenderás!'
       }
     }
-  }
+}
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -49,12 +53,10 @@ const LaunchRequestHandler = {
                     templateData: {
                         type: "object",
                         properties: {
-                            header: "Hola Multimodal",
-                            background: "https://s3-eu-west-1.amazonaws.com/miscalexa/background.png",
-                            footer: "¿sabes rapear?",
-                            text: "¡Prueba y te sorprenderás!",
-                            image: "https://s3-eu-west-1.amazonaws.com/miscalexa/Alexa-sticker_Logo_circle-logomark_1x1in.png",
-                            logo: "https://s3-eu-west-1.amazonaws.com/miscalexa/skilllogo.png"
+                            background: util.getS3PreSignedUrl('Media/background.png'),
+                            footer: handlerInput.t('FOOTER_MSG'),
+                            text: handlerInput.t('TEXT_MSG'),
+                            image: util.getS3PreSignedUrl('Media/logo.png')
                         },
                         transformers: [
                             {

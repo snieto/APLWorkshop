@@ -2,7 +2,7 @@
 Pregressive demo for intro APL workshop
 
 - 01: First APL doc with just a background image. First container with image and text. supportsAPL() function
-- 02: Parameterized container (payload) with datasource
+- 02: Parameterized document (from payload) with datasource
 - 03: Import, resources and styles (both alexa-styles and custom style)
 - 04: Layouts (both custom and alexa-layouts (AlexaFooter)). When clauses and viewport (alexa-viewport-profiles)
 - 05: Transformers (textToHint) -> appends wake word to hint at footer

@@ -107,7 +107,7 @@
                         "height": "100vh"
                     },
                     {
-                       "type": "Container",
+                        "type": "Container",
                         "position": "absolute",
                         "width": "100vw",
                         "height": "100vh",
