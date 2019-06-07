@@ -10,8 +10,7 @@ const util = require('./util');
 const languageStrings = {
     en: {
       translation: {
-        WELCOME_MSG: 'Welcome, you can say Hello or Help. Which would you like to try?',
-        HELLO_MSG: 'Hello Multimodal!',
+        WELCOME_MSG: 'Welcome, you can ask me for a rap. What do you want to do next?',
         HELP_MSG: 'You can say hello to me! How can I help?',
         GOODBYE_MSG: 'Goodbye!',
         REFLECTOR_MSG: 'You just triggered {{intent}}',
@@ -25,8 +24,7 @@ const languageStrings = {
     },
     es:{
       translation: {
-        WELCOME_MSG: 'Bienvenido, puedes decir Hola o Ayuda. Cual prefieres?',
-        HELLO_MSG: 'Hola Multimodal!',
+        WELCOME_MSG: 'Bienvenido, puedes preguntarme si sé rapear. Qué quieres hacer?',
         HELP_MSG: 'Puedes pedirme que cante un rap. Cómo te puedo ayudar?',
         GOODBYE_MSG: 'Hasta luego!',
         REFLECTOR_MSG: 'Acabas de activar {{intent}}',
@@ -109,7 +107,6 @@ const RapIntentHandler = {
     },
     handle(handlerInput) {
         const speechText = `<audio src="${handlerInput.t('RAP_MP3')}"/>`;
-        //const speechText = `<audio src="${util.getS3PreSignedUrl('Media/rap_en.mp3')}"/>`;
 
         if(util.supportsAPL(handlerInput)){
             handlerInput.responseBuilder.addDirective({
@@ -146,12 +143,11 @@ const RapIntentHandler = {
                     }
                 }
             })
+        } else {
+            handlerInput.responseBuilder.speak(speechText);
         }
 
-        return handlerInput.responseBuilder
-            .speak(speechText)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
-            .getResponse();
+        return handlerInput.responseBuilder.getResponse();
     }
 };
 

@@ -11,29 +11,27 @@ const languageStrings = {
     en: {
       translation: {
         WELCOME_MSG: 'Welcome, you can say Hello or Help. Which would you like to try?',
-        HELLO_MSG: 'Hello Multimodal!',
         HELP_MSG: 'You can say hello to me! How can I help?',
         GOODBYE_MSG: 'Goodbye!',
         REFLECTOR_MSG: 'You just triggered {{intent}}',
         FALLBACK_MSG: 'Sorry, I don\'t know about that. Please try again.',
         ERROR_MSG: 'Sorry, there was an error. Please try again.',
         FOOTER_MSG: 'can you rap?',
-        SSML_MSG: `<speak>My name is Alexa and I'm here to say. I'm the baddest A.I. in the cloud today. Your responses are fast but mine are faster. Sucker speech engines they call me master</speak>`,
+        SSML_MSG: `<speak>My name is Alexa and I'm here to say. I'm the baddest A.I. in the cloud today. Your responses are fast but mine are faster. Sucker speech engines they call me master.</speak>`,
         RAP_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/rap_en.mp3',
         BB_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/bb.mp3'
       }
     },
     es:{
       translation: {
-        WELCOME_MSG: 'Bienvenido, puedes decir Hola o Ayuda. Cual prefieres?',
-        HELLO_MSG: 'Hola Multimodal!',
+        WELCOME_MSG: 'Bienvenido, puedes preguntarme si sé rapear. Qué quieres hacer?',
         HELP_MSG: 'Puedes pedirme que cante un rap. Cómo te puedo ayudar?',
         GOODBYE_MSG: 'Hasta luego!',
         REFLECTOR_MSG: 'Acabas de activar {{intent}}',
         FALLBACK_MSG: 'Lo siento, no se nada sobre eso. Por favor inténtalo otra vez.',
         ERROR_MSG: 'Lo siento, ha habido un problema. Por favor inténtalo otra vez.',
         FOOTER_MSG: 'sabes rapear?',
-        SSML_MSG: '<speak>Me llamo Alexa y voy a decirte lo que soy. La inteligencia artificial más chunga con la que vas a hablar hoy. Tus respuestas pueden ser rápidas pero las mías son tan fugaces que queman. Les doy mil vueltas a los motores de reconocimiento y por eso es normal que me teman</speak>',
+        SSML_MSG: '<speak>Me llamo Alexa y voy a decirte lo que soy. La inteligencia artificial más chunga con la que vas a hablar hoy. Tus respuestas pueden ser rápidas pero las mías son tan fugaces que queman. Les doy mil vueltas a los motores de reconocimiento y por eso es normal que me teman.</speak>',
         RAP_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/rap_es.mp3',
         BB_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/bb.mp3'
       }
@@ -109,8 +107,11 @@ const RapIntentHandler = {
             || handlerInput.requestEnvelope.request.type === 'Alexa.Presentation.APL.UserEvent';
     },
     handle(handlerInput) {
-        let speechText = `<audio src="${handlerInput.t('RAP_MP3')}"/>`;
-        //let speechText = `<audio src="${util.getS3PreSignedUrl('Media/rap_en.mp3')}"/>`;
+        let mp3Url = handlerInput.t('RAP_MP3');
+        if (handlerInput.requestEnvelope.request.type === 'Alexa.Presentation.APL.UserEvent') {
+            console.log(handlerInput.requestEnvelope.request.arguments[0]);
+            mp3Url = handlerInput.t('BB_MP3');
+        }
 
         if(util.supportsAPL(handlerInput)){
             handlerInput.responseBuilder.addDirective({
@@ -126,6 +127,7 @@ const RapIntentHandler = {
                             background: util.getS3PreSignedUrl('Media/background.png'),
                             footer: handlerInput.t('FOOTER_MSG'),
                             textSsml: handlerInput.t('SSML_MSG'),
+                            textSpeech: mp3Url,
                             image: util.getS3PreSignedUrl('Media/logo.png')
                         },
                         transformers: [
@@ -135,30 +137,28 @@ const RapIntentHandler = {
                             },
                             {
                                 inputPath: "textSsml",
-                                outputName: "textSpeech", // gets generated in datasource at the same level of textSsml (properties)
-                                transformer: "ssmlToSpeech"
-                            },
-                            {
-                                inputPath: "textSsml",
                                 outputName: "text", // gets generated in datasource at the same level of textSsml (properties)
                                 transformer: "ssmlToText"
                             }
                         ]
                     }
                 }
+            }).addDirective({
+                type: 'Alexa.Presentation.APL.ExecuteCommands',
+                version: '1.0',
+                token: 'SpeechDocumentToken',
+                commands: [
+                    {
+                        "type": "SpeakItem",
+                        "componentId": "idVoiceDemoText"
+                    }
+                ]
             })
+        } else {
+            handlerInput.responseBuilder.speak(`<audio src="${handlerInput.t('RAP_MP3')}"/>`);
         }
 
-        if (handlerInput.requestEnvelope.request.type === 'Alexa.Presentation.APL.UserEvent') {
-          console.log(handlerInput.requestEnvelope.request.arguments[0]);
-          speechText = `<audio src="${handlerInput.t('BB_MP3')}"/>`;
-          //speechText = `<audio src="${util.getS3PreSignedUrl('Media/bb.mp3')}"/>`;
-        }
-
-        return handlerInput.responseBuilder
-            .speak(speechText)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
-            .getResponse();
+        return handlerInput.responseBuilder.getResponse();
     }
 };
 
