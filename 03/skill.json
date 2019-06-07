@@ -1,0 +1,27 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/custom",
+          "uri": "ask-custom-apl-workshop-default"
+        },
+        "interfaces": [
+          {
+            "type": "ALEXA_PRESENTATION_APL"
+          }
+        ]
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Hola Multimodal"
+        },
+        "es-ES": {
+          "name": "Hola Multimodal"
+        }
+      }
+    }
+  }
+}
