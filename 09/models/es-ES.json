@@ -1,0 +1,232 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hola multimodal",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "salir"
+                    ]
+                },
+                {
+                    "name": "KaraokeIntent",
+                    "slots": [],
+                    "samples": [
+                        "karaoke",
+                        "muestrame el modo karaoke",
+                        "léeme",
+                        "quiero que leas",
+                        "a leer",
+                        "quiero un karaoke",
+                        "lee línea por línea",
+                        "línea a línea",
+                        "lee línea a línea"
+                    ]
+                },
+                {
+                    "name": "RapIntent",
+                    "slots": [],
+                    "samples": [
+                        "rapea",
+                        "sabes rapear",
+                        "puedes rapear",
+                        "quiero un rap",
+                        "rap",
+                        "a rapear",
+                        "hazme un rap",
+                        "dame un rap",
+                        "canta un rap",
+                        "canta",
+                        "canta algo",
+                        "ponle más sentimiento",
+                        "hazlo menos robótico",
+                        "con estilo de rap",
+                        "ponle estilo de rap",
+                        "como un rapero",
+                        "más natural",
+                        "con más sentimiento"
+                    ]
+                },
+                {
+                    "name": "SongsIntent",
+                    "slots": [],
+                    "samples": [
+                        "muéstrame canciones",
+                        "canciones",
+                        "quiero ver canciones",
+                        "qué canciones te gustan",
+                        "recomiéndame canciones",
+                        "recomiéndame artistas",
+                        "muéstrame artistas",
+                        "cuáles son tus bandas favoritas",
+                        "cuáles son tus canciones favoritas"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SelectIntent",
+                    "slots": [
+                        {
+                            "name": "ListPosition",
+                            "type": "Ordinal"
+                        },
+                        {
+                            "name": "el",
+                            "type": "Article"
+                        }
+                    ],
+                    "samples": [
+                        "reproduce {el} {ListPosition}",
+                        "quiero {el} {ListPosition}",
+                        "elije {el} {ListPosition}",
+                        "selecciona {el} {ListPosition}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "Ordinal",
+                    "values": [
+                        {
+                            "id": "10",
+                            "name": {
+                                "value": "décimo",
+                                "synonyms": [
+                                    "número diez",
+                                    "décima"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "9",
+                            "name": {
+                                "value": "noveno",
+                                "synonyms": [
+                                    "número nueve",
+                                    "novena"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "8",
+                            "name": {
+                                "value": "octavo",
+                                "synonyms": [
+                                    "número ocho",
+                                    "octava"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "7",
+                            "name": {
+                                "value": "séptimo",
+                                "synonyms": [
+                                    "número siete",
+                                    "séptima"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "6",
+                            "name": {
+                                "value": "sexto",
+                                "synonyms": [
+                                    "número seis",
+                                    "sexta"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "5",
+                            "name": {
+                                "value": "quinto",
+                                "synonyms": [
+                                    "número cinco",
+                                    "quinta"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "cuarto",
+                                "synonyms": [
+                                    "número cuatro",
+                                    "cuarta"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "tercero",
+                                "synonyms": [
+                                    "número tres",
+                                    "tercera"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "segundo",
+                                "synonyms": [
+                                    "número dos",
+                                    "segunda"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "primero",
+                                "synonyms": [
+                                    "número uno",
+                                    "primera"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Article",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "las"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "la"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "los"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "el"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

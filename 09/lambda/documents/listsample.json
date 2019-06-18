@@ -1,0 +1,525 @@
+ {
+    "tracks": [
+        {
+            "type": "track",
+            "id": "Tra.285892073",
+            "index": 2,
+            "disc": 1,
+            "href": "https://api.napster.com/v2.1/tracks/Tra.285892073",
+            "playbackSeconds": 201,
+            "explicit": true,
+            "isStreamable": true,
+            "name": "Range",
+            "isrc": "TCADI1774064",
+            "shortcut": "datt/side-one/range",
+            "blurbs": [],
+            "artistId": "Art.39889663",
+            "artistName": "Datt",
+            "albumName": "Side One",
+            "formats": [
+                {
+                    "type": "format",
+                    "bitrate": 64,
+                    "name": "AAC PLUS"
+                }
+            ],
+            "albumId": "Alb.285892071",
+            "contributors": {
+                "primaryArtist": "Art.39889663"
+            },
+            "links": {
+                "artists": {
+                    "ids": [
+                        "Art.39889663"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.39889663"
+                },
+                "albums": {
+                    "ids": [
+                        "Alb.285892071"
+                    ],
+                    "href": "https://api.napster.com/v2.1/albums/Alb.285892071"
+                },
+                "genres": {
+                    "ids": [
+                        "g.290",
+                        "g.115",
+                        "g.146"
+                    ],
+                    "href": "https://api.napster.com/v2.1/genres/g.290,g.115,g.146"
+                },
+                "tags": {
+                    "ids": [
+                        "tag.152196496",
+                        "tag.152196495",
+                        "tag.152196515"
+                    ],
+                    "href": "https://api.napster.com/v2.1/tags/tag.152196496,tag.152196495,tag.152196515"
+                }
+            },
+            "previewURL": "https://miscalexa.s3-eu-west-1.amazonaws.com/songs/1372963630.mp3"
+        },
+        {
+            "type": "track",
+            "id": "Tra.342736171",
+            "index": 1,
+            "disc": 1,
+            "href": "https://api.napster.com/v2.1/tracks/Tra.342736171",
+            "playbackSeconds": 31,
+            "explicit": false,
+            "isStreamable": true,
+            "name": "The Intro",
+            "isrc": "GBSMU5901010",
+            "shortcut": "homs/the-intro-342736170/the-intro",
+            "blurbs": [],
+            "artistId": "Art.278674187",
+            "artistName": "Homs",
+            "albumName": "The Intro",
+            "formats": [
+                {
+                    "type": "format",
+                    "bitrate": 320,
+                    "name": "AAC"
+                },
+                {
+                    "type": "format",
+                    "bitrate": 192,
+                    "name": "AAC"
+                },
+                {
+                    "type": "format",
+                    "bitrate": 64,
+                    "name": "AAC PLUS"
+                }
+            ],
+            "albumId": "Alb.342736170",
+            "contributors": {
+                "primaryArtist": "Art.278674187"
+            },
+            "links": {
+                "artists": {
+                    "ids": [
+                        "Art.278674187"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.278674187"
+                },
+                "albums": {
+                    "ids": [
+                        "Alb.342736170"
+                    ],
+                    "href": "https://api.napster.com/v2.1/albums/Alb.342736170"
+                },
+                "genres": {
+                    "ids": [
+                        "g.398",
+                        "g.71"
+                    ],
+                    "href": "https://api.napster.com/v2.1/genres/g.398,g.71"
+                },
+                "tags": {
+                    "ids": [
+                        "tag.152196511",
+                        "tag.152196543"
+                    ],
+                    "href": "https://api.napster.com/v2.1/tags/tag.152196511,tag.152196543"
+                }
+            },
+            "previewURL": "https://miscalexa.s3-eu-west-1.amazonaws.com/songs/1467701507.mp3"
+        },
+        {
+            "type": "track",
+            "id": "Tra.280415156",
+            "index": 1,
+            "disc": 1,
+            "href": "https://api.napster.com/v2.1/tracks/Tra.280415156",
+            "playbackSeconds": 60,
+            "explicit": false,
+            "isStreamable": true,
+            "name": "I Am Clout",
+            "isrc": "TCADH1760651",
+            "shortcut": "ccmbeatz/i-am-clout/i-am-clout",
+            "blurbs": [],
+            "artistId": "Art.280415152",
+            "artistName": "Ccmbeatz",
+            "albumName": "I Am Clout",
+            "formats": [
+                {
+                    "type": "format",
+                    "bitrate": 64,
+                    "name": "AAC PLUS"
+                }
+            ],
+            "albumId": "Alb.280415155",
+            "contributors": {
+                "primaryArtist": "Art.280415152"
+            },
+            "links": {
+                "artists": {
+                    "ids": [
+                        "Art.280415152"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.280415152"
+                },
+                "albums": {
+                    "ids": [
+                        "Alb.280415155"
+                    ],
+                    "href": "https://api.napster.com/v2.1/albums/Alb.280415155"
+                },
+                "genres": {
+                    "ids": [
+                        "g.146"
+                    ],
+                    "href": "https://api.napster.com/v2.1/genres/g.146"
+                },
+                "tags": {
+                    "ids": [
+                        "tag.152196515"
+                    ],
+                    "href": "https://api.napster.com/v2.1/tags/tag.152196515"
+                }
+            },
+            "previewURL": "https://miscalexa.s3-eu-west-1.amazonaws.com/songs/1378990991.mp3"
+        },
+        {
+            "type": "track",
+            "id": "Tra.364555896",
+            "index": 1,
+            "disc": 1,
+            "href": "https://api.napster.com/v2.1/tracks/Tra.364555896",
+            "playbackSeconds": 117,
+            "explicit": true,
+            "isStreamable": true,
+            "name": "Spaceship Freestyle",
+            "isrc": "NL1AP1919422",
+            "shortcut": "nigel-p/spaceship-freestyle/spaceship-freestyle",
+            "blurbs": [],
+            "artistId": "Art.364555892",
+            "artistName": "Nigel P",
+            "albumName": "Spaceship Freestyle",
+            "formats": [
+                {
+                    "type": "format",
+                    "bitrate": 64,
+                    "name": "AAC PLUS"
+                }
+            ],
+            "albumId": "Alb.364555895",
+            "contributors": {
+                "primaryArtist": "Art.364555892"
+            },
+            "links": {
+                "artists": {
+                    "ids": [
+                        "Art.364555892"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.364555892"
+                },
+                "albums": {
+                    "ids": [
+                        "Alb.364555895"
+                    ],
+                    "href": "https://api.napster.com/v2.1/albums/Alb.364555895"
+                },
+                "genres": {
+                    "ids": [
+                        "g.146"
+                    ],
+                    "href": "https://api.napster.com/v2.1/genres/g.146"
+                },
+                "tags": {
+                    "ids": [
+                        "tag.152196515"
+                    ],
+                    "href": "https://api.napster.com/v2.1/tags/tag.152196515"
+                }
+            },
+            "previewURL": "https://miscalexa.s3-eu-west-1.amazonaws.com/songs/1505721178.mp3"
+        },
+        {
+            "type": "track",
+            "id": "Tra.366594336",
+            "index": 1,
+            "disc": 1,
+            "href": "https://api.napster.com/v2.1/tracks/Tra.366594336",
+            "playbackSeconds": 157,
+            "explicit": false,
+            "isStreamable": true,
+            "name": "Old Town Road (Remix)",
+            "isrc": "USSM11902498",
+            "shortcut": "lil-nas-x/old-town-road-remix/old-town-road-remix",
+            "blurbs": [],
+            "artistId": "Art.317800381",
+            "artistName": "Lil Nas X",
+            "albumName": "Old Town Road (feat. Billy Ray Cyrus) (Remix)",
+            "formats": [
+                {
+                    "type": "format",
+                    "bitrate": 64,
+                    "name": "AAC PLUS"
+                },
+                {
+                    "type": "format",
+                    "bitrate": 320,
+                    "name": "AAC"
+                },
+                {
+                    "type": "format",
+                    "bitrate": 192,
+                    "name": "AAC"
+                }
+            ],
+            "albumId": "Alb.366594335",
+            "contributors": {
+                "composer": "Art.37511",
+                "featuredPerformer": "Art.37511",
+                "engineer": "Art.263684209",
+                "producer": "Art.267804742",
+                "primaryArtist": "Art.317800381"
+            },
+            "links": {
+                "artists": {
+                    "ids": [
+                        "Art.317800381"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.317800381"
+                },
+                "albums": {
+                    "ids": [
+                        "Alb.366594335"
+                    ],
+                    "href": "https://api.napster.com/v2.1/albums/Alb.366594335"
+                },
+                "composers": {
+                    "ids": [
+                        "Art.37511"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.37511"
+                },
+                "genres": {
+                    "ids": [
+                        "g.407"
+                    ],
+                    "href": "https://api.napster.com/v2.1/genres/g.407"
+                },
+                "tags": {
+                    "ids": [
+                        "tag.152196531"
+                    ],
+                    "href": "https://api.napster.com/v2.1/tags/tag.152196531"
+                }
+            },
+            "previewURL": "https://miscalexa.s3-eu-west-1.amazonaws.com/songs/1498053435.mp3"
+        },
+        {
+            "type": "track",
+            "id": "Tra.364895048",
+            "index": 2,
+            "disc": 1,
+            "href": "https://api.napster.com/v2.1/tracks/Tra.364895048",
+            "playbackSeconds": 194,
+            "explicit": false,
+            "isStreamable": true,
+            "name": "bad guy",
+            "isrc": "USUM71900764",
+            "shortcut": "billie-eilish/when-we-all-fall-asleep-where-do-we-go/bad-guy",
+            "blurbs": [],
+            "artistId": "Art.214281475",
+            "artistName": "Billie Eilish",
+            "albumName": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
+            "formats": [
+                {
+                    "type": "format",
+                    "bitrate": 64,
+                    "name": "AAC PLUS"
+                },
+                {
+                    "type": "format",
+                    "bitrate": 320,
+                    "name": "AAC"
+                },
+                {
+                    "type": "format",
+                    "bitrate": 192,
+                    "name": "AAC"
+                }
+            ],
+            "albumId": "Alb.364895046",
+            "contributors": {
+                "remixer": "Art.33131193",
+                "engineer": "Art.33131193",
+                "composer": "Art.186781446",
+                "producer": "Art.186781446",
+                "primaryArtist": "Art.214281475"
+            },
+            "links": {
+                "artists": {
+                    "ids": [
+                        "Art.214281475"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.214281475"
+                },
+                "albums": {
+                    "ids": [
+                        "Alb.364895046"
+                    ],
+                    "href": "https://api.napster.com/v2.1/albums/Alb.364895046"
+                },
+                "composers": {
+                    "ids": [
+                        "Art.186781446"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.186781446"
+                },
+                "genres": {
+                    "ids": [
+                        "g.218",
+                        "g.71",
+                        "g.33"
+                    ],
+                    "href": "https://api.napster.com/v2.1/genres/g.218,g.71,g.33"
+                },
+                "tags": {
+                    "ids": [
+                        "tag.152196506",
+                        "tag.152196543",
+                        "tag.152196505"
+                    ],
+                    "href": "https://api.napster.com/v2.1/tags/tag.152196506,tag.152196543,tag.152196505"
+                }
+            },
+            "previewURL": "https://miscalexa.s3-eu-west-1.amazonaws.com/songs/1496172763.mp3"
+        },
+        {
+            "type": "track",
+            "id": "Tra.361046974",
+            "index": 1,
+            "disc": 1,
+            "href": "https://api.napster.com/v2.1/tracks/Tra.361046974",
+            "playbackSeconds": 113,
+            "explicit": true,
+            "isStreamable": true,
+            "name": "Old Town Road",
+            "isrc": "USSM11901941",
+            "shortcut": "lil-nas-x/old-town-road-single/old-town-road",
+            "blurbs": [],
+            "artistId": "Art.317800381",
+            "artistName": "Lil Nas X",
+            "albumName": "Old Town Road",
+            "formats": [
+                {
+                    "type": "format",
+                    "bitrate": 192,
+                    "name": "AAC"
+                },
+                {
+                    "type": "format",
+                    "bitrate": 64,
+                    "name": "AAC PLUS"
+                },
+                {
+                    "type": "format",
+                    "bitrate": 320,
+                    "name": "AAC"
+                }
+            ],
+            "albumId": "Alb.361046973",
+            "contributors": {
+                "producer": "Art.304641317",
+                "engineer": "Art.306700362",
+                "primaryArtist": "Art.317800381",
+                "composer": "Art.361046975"
+            },
+            "links": {
+                "artists": {
+                    "ids": [
+                        "Art.317800381"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.317800381"
+                },
+                "albums": {
+                    "ids": [
+                        "Alb.361046973"
+                    ],
+                    "href": "https://api.napster.com/v2.1/albums/Alb.361046973"
+                },
+                "composers": {
+                    "ids": [
+                        "Art.361046975"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.361046975"
+                },
+                "genres": {
+                    "ids": [
+                        "g.146",
+                        "g.407"
+                    ],
+                    "href": "https://api.napster.com/v2.1/genres/g.146,g.407"
+                },
+                "tags": {
+                    "ids": [
+                        "tag.152196515",
+                        "tag.152196531"
+                    ],
+                    "href": "https://api.napster.com/v2.1/tags/tag.152196515,tag.152196531"
+                }
+            },
+            "previewURL": "https://miscalexa.s3-eu-west-1.amazonaws.com/songs/1498106281.mp3"
+        },
+        {
+            "type": "track",
+            "id": "Tra.335106262",
+            "index": 5,
+            "disc": 1,
+            "href": "https://api.napster.com/v2.1/tracks/Tra.335106262",
+            "playbackSeconds": 66,
+            "explicit": false,
+            "isStreamable": true,
+            "name": "Open Range",
+            "isrc": "TCADY1801284",
+            "shortcut": "banjo-master/banjo-riff-lessons-vol-1/open-range",
+            "blurbs": [],
+            "artistId": "Art.335106254",
+            "artistName": "Banjo Master",
+            "albumName": "Banjo Riff Lessons, Vol. 1",
+            "formats": [
+                {
+                    "type": "format",
+                    "bitrate": 64,
+                    "name": "AAC PLUS"
+                }
+            ],
+            "albumId": "Alb.335106257",
+            "contributors": {
+                "primaryArtist": "Art.335106254"
+            },
+            "links": {
+                "artists": {
+                    "ids": [
+                        "Art.335106254"
+                    ],
+                    "href": "https://api.napster.com/v2.1/artists/Art.335106254"
+                },
+                "albums": {
+                    "ids": [
+                        "Alb.335106257"
+                    ],
+                    "href": "https://api.napster.com/v2.1/albums/Alb.335106257"
+                },
+                "genres": {
+                    "ids": [
+                        "g.407"
+                    ],
+                    "href": "https://api.napster.com/v2.1/genres/g.407"
+                },
+                "tags": {
+                    "ids": [
+                        "tag.152196531"
+                    ],
+                    "href": "https://api.napster.com/v2.1/tags/tag.152196531"
+                }
+            },
+            "previewURL": "https://miscalexa.s3-eu-west-1.amazonaws.com/songs/1454731907.mp3"
+        }
+    ]
+}

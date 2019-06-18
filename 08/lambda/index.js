@@ -10,7 +10,7 @@ const util = require('./util');
 const languageStrings = {
     en: {
       translation: {
-        WELCOME_MSG: 'Welcome, you can say Hello or Help. Which would you like to try?',
+        WELCOME_MSG: 'Welcome, you can ask me if I can rap. What would you like to do?',
         HELP_MSG: 'You can say hello to me! How can I help?',
         GOODBYE_MSG: 'Goodbye!',
         REFLECTOR_MSG: 'You just triggered {{intent}}',
@@ -36,9 +36,9 @@ const languageStrings = {
         BB_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/bb.mp3'
       }
     }
-  }
+}
 
-  const LaunchRequestHandler = {
+const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
@@ -127,7 +127,7 @@ const RapIntentHandler = {
                             background: util.getS3PreSignedUrl('Media/background.png'),
                             footer: handlerInput.t('FOOTER_MSG'),
                             textSsml: handlerInput.t('SSML_MSG'),
-                            textSpeech: mp3Url,
+                            textSpeech: mp3Url, // this hack allows SpeakItem to play an mp3
                             image: util.getS3PreSignedUrl('Media/logo.png')
                         },
                         transformers: [

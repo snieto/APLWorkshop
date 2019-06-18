@@ -1,0 +1,184 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "import": [
+        {
+            "name": "alexa-styles",
+            "version" : "1.0.0"
+        },
+        {
+            "name": "alexa-layouts",
+            "version" : "1.0.0"
+        },
+        {
+            "name": "alexa-viewport-profiles",
+            "version" : "1.0.0"
+        }
+    ],
+    "resources": [
+        {
+            "when": "${viewport.shape == 'round'}",
+            "dimensions": {
+              "myTextTopPadding": "40dp"
+            }
+        },
+        {
+            "when": "${@viewportProfile == @hubLandscapeSmall || @viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+            "dimensions": {
+              "myTextTopPadding": "50dp"
+            }
+        }
+    ],
+    "styles": {
+        "myTextStyle": {
+            "values": [
+                {
+                    "fontSize": "22",
+                    "fontWeight": "bold",
+                    "letterSpacing": "0",
+                    "textAlign": "center"
+                }
+            ]
+        }
+    },
+    "layouts": {
+        "CentralLayout": {
+            "description": "A basic central screen layout with an image and a text",
+            "parameters": [
+                {
+                    "name": "image",
+                    "type": "string"
+                },
+                {
+                    "name": "text",
+                    "type": "string"
+                },
+                {
+                    "name": "textSpeech",
+                    "type": "string"
+                },
+                {
+                    "name": "style",
+                    "type": "string"
+                }
+            ],
+            "items": [
+                {
+                    "type": "TouchWrapper",
+                    "id": "touch-one",
+                    "item": {
+                        "type": "Container",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "item": [
+                            {
+                                "type": "Image",
+                                "id": "image",
+                                "source": "${image}",
+                                "width": "20vw",
+                                "height": "20vh"
+                            },
+                            {
+                                "type": "Text",
+                                "id": "idVoiceDemoText",
+                                "text": "${text}",
+                                "speech": "${textSpeech}",
+                                "color" : "#FFFFFF",
+                                "textAlign": "center",
+                                "style" : "${style}",
+                                "paddingTop" : "@myTextTopPadding"
+                            }
+                        ]
+                    },
+                    "onPress": [ 
+                        {
+                            "type": "SendEvent",
+                            "arguments": [
+                                "${text}"
+                            ]
+                        },
+                        {
+                            "type": "SetState",
+                            "componentId": "touch-one",
+                            "state": "disabled",
+                            "value": true
+                        },
+                        {
+                            "type": "SetValue",
+                            "componentId": "image",
+                            "property": "opacity",
+                            "value": "0.3"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "items": [
+                    {
+                        "type": "Image",
+                        "source": "${payload.templateData.properties.background}",
+                        "scale": "best-fill",
+                        "width": "100vw",
+                        "height": "100vh"
+                    },
+                    {
+                        "type": "Container",
+                        "position": "absolute",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "items": [
+                            {
+                                "when": "${viewport.shape == 'round'}",
+                                "type": "Container",
+                                "width": "100vw",
+                                "height": "75vh",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "items": [
+                                    {
+                                        "type": "CentralLayout",
+                                        "image": "${payload.templateData.properties.image}",
+                                        "text": "${payload.templateData.properties.text}",
+                                        "textSpeech": "${payload.templateData.properties.textSpeech}",
+                                        "style": "myTextStyle"
+                                    }
+                                ]
+                            },
+                            {
+                                "when": "${@viewportProfile == @hubLandscapeSmall || @viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                                "type": "Container",
+                                "width": "100vw",
+                                "height": "90vh",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "items": [
+                                    {
+                                        "type": "CentralLayout",
+                                        "image": "${payload.templateData.properties.image}",
+                                        "text": "${payload.templateData.properties.text}",
+                                        "textSpeech": "${payload.templateData.properties.textSpeech}",
+                                        "style": "textStyleDisplay5"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "AlexaFooter",
+                                "hintText": "${payload.templateData.properties.footer}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

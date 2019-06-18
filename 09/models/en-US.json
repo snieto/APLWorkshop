@@ -1,0 +1,82 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hello multimodal",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "KaraokeIntent",
+                    "slots": [],
+                    "samples": [
+                        "karaoke",
+                        "show me karaoke mode",
+                        "read to me",
+                        "i want you to read",
+                        "let's read",
+                        "i want a karaoke",
+                        "read line by line",
+                        "line by line"
+                    ]
+                },
+                {
+                    "name": "RapIntent",
+                    "slots": [],
+                    "samples": [
+                        "go rap",
+                        "do you know how to rap",
+                        "can you rap",
+                        "i want a rap",
+                        "rap",
+                        "let's rap",
+                        "show me a rap",
+                        "sing a rap",
+                        "sing",
+                        "sing something",
+                        "with more feeling",
+                        "less robotic",
+                        "with a rap style",
+                        "do it rap style",
+                        "like a rapper",
+                        "more natural",
+                        "more feeling"
+                    ]
+                },
+                {
+                    "name": "SongsIntent",
+                    "slots": [],
+                    "samples": [
+                        "show me some songs",
+                        "songs",
+                        "i want to see songs",
+                        "which songs do you like",
+                        "suggest a few songs",
+                        "which bands do you like",
+                        "show me some artists",
+                        "what are your favorite bands",
+                        "what are your favorite songs"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.SelectIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        }
+    }
+}

@@ -36,7 +36,7 @@ const languageStrings = {
         BB_MP3: 'https://s3-eu-west-1.amazonaws.com/miscalexa/bb.mp3'
       }
     }
-  }
+}
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
