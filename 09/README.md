@@ -9,7 +9,7 @@ List visualization and voice selection. The sample now shows how to process a li
 - listscreen1.json: song list APL document with different layouts for round and rectangular screens
 - listsample.json: songs metadata
 - listsource1.json: datasource to test in the display prototyping tool
-- index.js: hack that passes mp3 directly to speech property for playing with SpeakItem (RapIntent)
+- index.js: added SongsIntentHandler and SelectionIntentHandler. Modified TouchIntentHandler to play songs samples
 
 ## Model
 - es-ES.json: added SongsIntent. Added custom SelectIntent (AMAZON.SelectIntent not yet available)
