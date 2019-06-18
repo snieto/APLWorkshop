@@ -462,56 +462,13 @@ const LocalisationRequestInterceptor = {
 
 const SDKUtilitiesRequestInterceptor = {
     process(handlerInput) {
-        handlerInput.getLocale = function getLocale() {
-            return Alexa.getLocale(handlerInput.requestEnvelope);
+        for (const method of ["getLocale", "getRequestType", "getIntentName", "getAccountLinkingAccessToken", "getApiAccessToken", "getDeviceId", "getUserId", "getDialogState", "getSupportedInterfaces", "isNewSession", "getSlot", "getSlotValue", "getViewportOrientation", "getViewportProfile"]) {
+            handlerInput[method] = function(...args) {
+                return Alexa[method](handlerInput.requestEnvelope, ...args);
+            }
         }
-        handlerInput.getRequestType = function getRequestType() {
-            return Alexa.getRequestType(handlerInput.requestEnvelope);
-        }
-        handlerInput.getIntentName = function getIntentName() {
-            return Alexa.getIntentName(handlerInput.requestEnvelope);
-        }
-        handlerInput.getAccountLinkingAccessToken = function getAccountLinkingAccessToken() {
-            return Alexa.getAccountLinkingAccessToken(handlerInput.requestEnvelope);
-        }
-        handlerInput.getApiAccessToken = function getApiAccessToken() {
-            return Alexa.getApiAccessToken(handlerInput.requestEnvelope);
-        }
-        handlerInput.getDeviceId = function getDeviceId() {
-            return Alexa.getDeviceId(handlerInput.requestEnvelope);
-        }
-        handlerInput.getUserId = function getUserId() {
-            return Alexa.getUserId(handlerInput.requestEnvelope);
-        }
-        handlerInput.getDialogState = function getDialogState() {
-            return Alexa.getDialogState(handlerInput.requestEnvelope);
-        }
-        handlerInput.getSupportedInterfaces = function getSupportedInterfaces() {
-            return Alexa.getSupportedInterfaces(handlerInput.requestEnvelope);
-        }
-        handlerInput.isNewSession = function isNewSession() {
-            return Alexa.isNewSession(handlerInput.requestEnvelope);
-        }
-        handlerInput.getSlot = function getSlot(slotName) {
-            return Alexa.getSlot(handlerInput.requestEnvelope, slotName);
-        }
-        handlerInput.getSlotValue = function getSlotValue(slotName) {
-            return Alexa.getSlotValue(handlerInput.requestEnvelope, slotName);
-        }
-        handlerInput.escapeXmlCharacters = function escapeXmlCharacters(input) {
-            return Alexa.escapeXmlCharacters(input);
-        }
-        handlerInput.getViewportOrientation = function getViewportOrientation(width, height) {
-            return Alexa.getViewportOrientation(handlerInput.requestEnvelope, width, height);
-        }
-        handlerInput.getViewportSizeGroup = function getViewportSizeGroup(size) {
-            return Alexa.getViewportSizeGroup(size);
-        }
-        handlerInput.getViewportDpiGroup = function getViewportDpiGroup(dpi) {
-            return Alexa.getViewportDpiGroup(dpi);
-        }
-        handlerInput.getViewportProfile = function getViewportProfile() {
-            return Alexa.getViewportProfile(handlerInput.requestEnvelope);
+        for (const method of ["escapeXmlCharacters", "getViewportSizeGroup", "getViewportDpiGroup"]) {
+            handlerInput[method] = Alexa[method].bind(Alexa);
         }
     }
 };
