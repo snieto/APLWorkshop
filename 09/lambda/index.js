@@ -271,19 +271,39 @@ const TouchIntentHandler = {
         return handlerInput.requestEnvelope.request.type === 'Alexa.Presentation.APL.UserEvent';
     },
     handle(handlerInput) {
-        let song = handlerInput.requestEnvelope.request.arguments[0];
-        if (typeof song === 'string' || song instanceof String){
-            song = JSON.parse(song);
+        const touchEventType = handlerInput.requestEnvelope.request.arguments[0];
+        const touchEventPayload = handlerInput.requestEnvelope.request.arguments[1];
+        console.log('Touch event payload: ' + touchEventPayload);
+
+        switch(touchEventType) {
+            case 'ButtonTouchEvent':
+                return buttonTouchHandler(touchEventPayload);
+            case 'ListTouchEvent':
+                return listTouchHandler(touchEventPayload);
+            default:
+                console.log('Unknown touch event type: ' + touchEventType);
+                return handlerInput.responseBuilder.getResponse();
         }
-        console.log('Touch event arguments: ' + JSON.stringify(song));
-        console.log(song.previewURL);
 
-        let speechText = `<audio src="` + song.previewURL + `"/> ` + handlerInput.t('WHAT_NEXT_MSG');
+        function buttonTouchHandler(event){
+            return handlerInput.responseBuilder
+                .speak(`<audio src="${handlerInput.t('BB_MP3')}"/>`)
+                .reprompt(handlerInput.t('HELP_MSG'))
+                .getResponse();
+        }
 
-        return handlerInput.responseBuilder
-            .speak(speechText)
-            .reprompt(handlerInput.t('HELP_MSG'))
-            .getResponse();
+        function listTouchHandler(event){
+            let song = event
+            if (typeof song === 'string' || song instanceof String){
+                song = JSON.parse(song);
+            }
+            console.log('About to play: ' + song.previewURL);
+
+            return handlerInput.responseBuilder
+                .speak(`<audio src="` + song.previewURL + `"/> ` + handlerInput.t('WHAT_NEXT_MSG'))
+                .reprompt(handlerInput.t('HELP_MSG'))
+                .getResponse();
+        }
     }
 };
 

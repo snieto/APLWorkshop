@@ -155,7 +155,9 @@ const RapIntentHandler = {
                 ]
             })
         } else {
-            handlerInput.responseBuilder.speak(`<audio src="${handlerInput.t('RAP_MP3')}"/>`);
+            handlerInput.responseBuilder
+                .speak(`<audio src="${handlerInput.t('RAP_MP3')}"/>`)
+                .reprompt(`<audio src="${handlerInput.t('RAP_MP3')}"/>`);
         }
 
         return handlerInput.responseBuilder.getResponse();

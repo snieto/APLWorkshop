@@ -96,7 +96,8 @@
                         {
                             "type": "SendEvent",
                             "arguments": [
-                                "${text}"
+                                "ButtonTouchEvent",
+                                "${event}"
                             ]
                         },
                         {
