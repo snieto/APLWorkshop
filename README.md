@@ -9,4 +9,4 @@ Pregressive demo for intro APL workshop
 - 06: Transformers 2 (ssmlToSpeech) -> converts SSML to spoken words. Commands (execute command directive). Karaoke highlighting
 - 07: Added Rap intent (no changes to APL fuctionality). Karaoke is now more obvious as the text is longer
 - 08: Touch wrapper. Use SetState to disable TouchWrapper after 1st touch. Use SetValue to change property of rendered APL document
-- 09: Sequence, ScrollToIndex, SelectIntent. List visualization and voice selection
+- 09: Sequence, ScrollToIndex, SelectIntent. List visualization and voice selection. Passing source event in touch wrapper
