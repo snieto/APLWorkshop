@@ -56,7 +56,7 @@ const LaunchRequestHandler = {
                         properties: {
                             background: util.getS3PreSignedUrl('Media/background.png'),
                             footer: handlerInput.t('FOOTER_MSG'),
-                            textSsml: handlerInput.t('SSML_MSG')},
+                            textSsml: handlerInput.t('SSML_MSG'),
                             image: util.getS3PreSignedUrl('Media/logo.png')
                         },
                         transformers: [
