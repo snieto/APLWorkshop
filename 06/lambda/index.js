@@ -76,6 +76,7 @@ const LaunchRequestHandler = {
                             }
                         ]
                     }
+                }
               })
               .addDirective({
                 type: 'Alexa.Presentation.APL.ExecuteCommands',
